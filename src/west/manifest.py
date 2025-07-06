@@ -983,7 +983,7 @@ class Project:
         # Though we capture stderr, it will be available as the stderr
         # attribute in the CalledProcessError raised by git() in
         # Python 3.5 and above if this call fails.
-        cp = self.git(['rev-parse', f'{rev}^{{commit}}'], capture_stdout=True,
+        cp = self.git(['rev-parse', f'{rev}^{{{{commit}}}}'], capture_stdout=True,
                       cwd=cwd, capture_stderr=True)
         # Assumption: SHAs are hex values and thus safe to decode in ASCII.
         # It'll be fun when we find out that was wrong and how...
